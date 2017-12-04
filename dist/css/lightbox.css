@@ -5,6 +5,12 @@ html.lb-disable-scrolling {
   height: 100vh;
   width: 100vw;
 }
+/* If disable scroll is active the container it's fixed*/
+html.lb-disable-scrolling #lightbox{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .lightboxOverlay {
   position: absolute;
