@@ -10500,19 +10500,20 @@ return jQuery;
       }
     }
 
-    // Position Lightbox
-    var top  = $window.scrollTop() + this.options.positionFromTop;
-    var left = $window.scrollLeft();
-    this.$lightbox.css({
-      top: top + 'px',
-      left: left + 'px'
-    }).fadeIn(this.options.fadeDuration);
-
-    // Disable scrolling of the page while open
     if (this.options.disableScrolling) {
       $('html').addClass('lb-disable-scrolling');
+      this.$lightbox.css({
+        display: 'block'
+      });
+    }else{
+      // Position Lightbox
+      var top  = $window.scrollTop() + this.options.positionFromTop;
+      var left = $window.scrollLeft();
+      this.$lightbox.css({
+        top: top + 'px',
+        left: left + 'px'
+      }).fadeIn(this.options.fadeDuration);
     }
-
     this.changeImage(imageNumber);
   };
 
